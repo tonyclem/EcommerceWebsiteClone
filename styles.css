@@ -76,6 +76,11 @@ body {
   justify-content: space-between;
   padding: 20px 80px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  z-index: 999;
 }
 
 .logo {
@@ -87,10 +92,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 999;
-  position: sticky;
-  top: 0;
-  left: 0;
 }
 
 #navbar li {
@@ -126,6 +127,15 @@ body {
   left: 20px;
 }
 
+#mobile {
+  display: none;
+  align-items: center;
+}
+
+#close {
+  display: none;
+}
+
 /* Home Page */
 #hero {
   background-image: url("./images/catoonPinata.jpeg");
@@ -150,8 +160,8 @@ body {
 
 #hero button {
   color: #088179;
-  border: 0;
   padding: 14px 80px 14px 65px;
+  border: 0;
   margin-top: 5px;
   font-size: 15px;
 }
@@ -462,6 +472,7 @@ body {
 footer {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 footer .col {
@@ -522,8 +533,172 @@ footer a:hover {
   color: #088178;
 }
 
+.payment {
+  width: 150px;
+  height: 40px;
+}
+
 /* footer .copyright {
   width: 100%;
   text-align: center;
 } */
-/* Shop page */ ;
+/* Shop page */
+
+/* Start Media Query */
+@media (max-width: 799px) {
+  .section-p1 {
+    padding: 40px 40px;
+  }
+
+  /* Navbar */
+  #navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    right: -330px;
+    height: 100vh;
+    width: 300px;
+    background-color: #e3e6f3;
+    box-shadow: 0 40px60px rgba(0, 0, 0, 0.1);
+    padding: 80px 0 0 10px;
+    transition: 0.2s;
+  }
+
+  #navbar.active {
+    right: 0px;
+    cursor: pointer;
+  }
+
+  #navbar li {
+    margin-bottom: 25px;
+  }
+
+  #mobile {
+    display: flex;
+    align-items: center;
+  }
+
+  #mobile i {
+    color: #1a1a1a;
+    font-size: 24px;
+    padding-left: 20px;
+  }
+
+  #close {
+    display: initial;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: #222;
+    font-size: 24px;
+  }
+  #lg-bg {
+    display: none;
+  }
+
+  #hero {
+    height: 70vh;
+    background-position: top 30% right 30%;
+    padding: 0 80px;
+  }
+  #feature {
+    justify-content: center;
+  }
+
+  #feature .fe-box {
+    margin: 15px 15px;
+  }
+
+  #product1 .pro-container {
+    justify-content: center;
+  }
+
+  #product1 .pro {
+    margin: 15px;
+  }
+
+  #banner {
+    height: 20vh;
+  }
+
+  #sm-banner .banner-box {
+    width: 100%;
+    height: 30vh;
+  }
+
+  #banner3 {
+    padding: 0 40px;
+  }
+
+  #banner3 .banner-box2 {
+    width: 28%;
+  }
+
+  #newsletter .form {
+    width: 70%;
+  }
+}
+
+@media (max-width: 477px) {
+  .section-p1 {
+    padding: 20px;
+  }
+  #header {
+    padding: 10px 30px;
+  }
+
+  h1 {
+    font-size: 38px;
+  }
+  h2 {
+    font-size: 32px;
+  }
+  #hero {
+    padding: 0 20px;
+    background-position: 55%;
+  }
+
+  #feature {
+    justify-content: space-between;
+  }
+
+  #feature .fe-box {
+    width: 155px;
+    margin: 0 0 15px 0;
+  }
+  #product .pro {
+    width: 100%;
+  }
+
+  #banner {
+    height: 40vh;
+  }
+
+  #sm-banner .banner-box {
+    height: 40vh;
+    width: 100%;
+  }
+
+  #sm-banner .banner-box2 {
+    margin-top: 20px;
+    width: 100%;
+  }
+  #banner3 {
+    padding: 0 20px;
+  }
+
+  #banner3 .banner-box {
+    width: 100%;
+  }
+
+  #newsletter {
+    padding: 40px 20px;
+  }
+
+  #newsletter .form {
+    width: 100%;
+  }
+}
